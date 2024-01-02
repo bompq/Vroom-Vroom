@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Race Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="raceStyle.css">
+</head>
+
+<body>
+    <div class="overlay"></div>
+    <div class="background"></div>
+    <div class="road" id="road"></div>
+
+    <!--BGM -->
+<audio id="backgroundMusic" loop>
+    <source src="SFX/NightTerrain.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+</audio>
+
+    <div class="header">
+        <div id="backButton" onclick="goBack()">
+            <img src="img/back.png" alt="Back">
+        </div>
+        <div class="startQuitContainer">
+            <img src="img/quit.png" alt="Quit" onclick="window.close()">
+            <img src="img/start.png" alt="Start Race" onclick="startRace()">
+        </div>
+    </div>
+
+    <div class="raceTrack">
+        <!-- Add images for the cars -->
+        <img src="img/redbull.gif" class="car" id="Red Bull" alt="Red Bull" width="auto" height="auto">
+        <img src="img/mercedes.gif" class="car" id="Mercedes" alt="Mercedes">
+        <img src="img/carFerrari.gif" class="car" id="Ferrari" alt="Ferrari">
+        <img src="img/martini.gif" class="car" id="Aston Martin" alt="Aston Martin">
+
+        <!-- Add duck images -->
+        <img src="img/duck1.gif" class="duck" id="duck1" alt="Duck1">
+        <img src="img/duck3.gif" class="duck" id="duck3" alt="Duck3">
+
+        <!-- Add rock images -->
+        <img src="img/rock1.png" class="rock" id="rock1" alt="Rock1">
+        <img src="img/rock3.png" class="rock" id="rock3" alt="Rock3">
+
+    </div>
+
+    <div class="nightColor">
+        <img src="img/nightOverlay.png" alt="" width="1536" height="690">
+    </div>
+    <div class="money-background">
+        <img src="img/betContainer.png" alt="" width="572" height="87">
+    </div>
+
+    <div class="money-info">
+        <p id="money-container" class="money-container">You currently have:</p>
+        <p id="money" class="amount">100</p>
+    </div>
+
+    <!-- Bet Amount input -->
+    <div class="bet-amount-input">
+        <label for="betAmount">Set Amount to Bet:</label>
+        <input type="number" id="betAmount" min="0" value="0">
+    </div>
+
+    <!-- Place Bet button -->
+    <div class="place-bet-button">
+        <img src="img/bet_button.png" alt="Place Bet" onclick="placeBet()">
+    </div>
+
+     <!-- Tentative ranking container -->
+    
+    <!-- Tentative ranking container -->
+    <div id="rankingModal">
+        <div class="ranking-container">
+            <!-- Your existing ranking content here -->
+            <div class="ranking">RANKINGS</div>
+            <div class="ranking">1st Place: </div>
+            <div class="ranking">2nd Place: </div>
+            <div class="ranking">3nd Place: </div>
+            <div class="ranking">4th Place: </div>
+            <button onclick="closeModal()">Bet Again</button>
+        </div>
+    </div>
+
+    <script src="race.js"></script>
+</body>
+</html>

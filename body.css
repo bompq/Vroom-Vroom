@@ -1,0 +1,320 @@
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100vh;
+    background: url('img/CityroadBackground.png') center/cover;
+    animation: moveBackground 7s linear infinite;
+    background-size: 100% 100%;
+    /*filter: blur(10px);*/
+    z-index: -1; /* Ensure the background is behind other elements */
+}
+
+@keyframes moveBackground {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); /* Move the background to the left by 50% of its width */
+    }
+}
+
+
+h1 {
+    position: relative;
+    top: 105px; 
+    left: 200px;
+    font-family: 'Silkscreen', sans-serif;
+    font-size: 130px;
+    color: white;
+    margin: 10px;
+}
+
+h2 {
+    position: relative;
+    top: 60px; 
+    left: 600px;
+    font-family: 'Silkscreen', sans-serif;
+    font-size: 95px;
+    color: white;
+    margin: 10px;
+}
+
+h3 {
+    position: relative;
+    top: 60px; 
+    left: 25px;
+    font-family: 'Silkscreen', sans-serif;
+    font-size: 95px;
+    color: white;
+    margin: 10px;
+}
+
+h4 {
+    position: relative;
+    top: 60px; 
+    left: 350px;
+    font-family: 'Silkscreen', sans-serif;
+    font-size: 95px;
+    color: white;
+    margin: 10px;
+}
+
+#gameContainer {
+    position: relative;
+}
+
+.cloud1 img{
+    position:absolute;
+    top: 40px;
+    animation: moveLeftRight 1s linear infinite alternate;
+}
+
+#cloud1 img{
+    z-index: -1; 
+}
+
+.cloud2 img{
+    position:absolute;
+    top: 240px;
+    left: 80px;
+    animation: moveLeftRight 1s linear infinite alternate;
+}
+
+#cloud2 img{
+    transform: scaleX(-1);
+    z-index: -1; 
+}
+
+.cloud3 img{
+    position:absolute;
+    top: 60px;
+    right: 20px;
+    animation: moveLeftRight 1s linear infinite alternate;
+}
+
+#cloud3 img{
+    z-index: -1; 
+}
+
+.cloud4 img{
+    position:absolute;
+    top: 270px;
+    right: 180px;
+    animation: moveLeftRight 1s linear infinite alternate;
+}
+
+#cloud4 img{
+    z-index: -1; 
+}
+
+.carFront img{
+    position:absolute;
+    bottom: 15px;
+    left: 120px;
+    /*animation: moveRight 6s linear infinite;*/
+}
+
+#carFront img{
+    z-index: -1; 
+}
+
+.bird1 img{
+    position:absolute;
+    top: 150px;
+    left: 40px;
+    animation: flap 1s linear infinite;
+}
+
+#bird1 img{
+    z-index: -1;
+}
+
+.bird2 img{
+    position:absolute;
+    top: 190px;
+    right: 45px;
+    animation: flap 1s linear infinite;
+}
+
+#bird2 img{
+    z-index: -1;
+}
+
+/* Animation */
+@keyframes moveLeftRight {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(20px); 
+    }
+}
+
+@keyframes moveRight {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100vw); /* Move the car to the right end of the screen */
+    }
+
+}
+
+@keyframes flap {
+    100%{
+        transform: translateY(-10px);
+    }
+    50%{
+        transform: translateY(10px);
+    }
+    0%{
+        transform: translateY(-10px);
+    }   
+}
+
+#startButton {
+    font-family: 'Silkscreen', sans-serif;
+    font-size: 30px;
+    position: relative;
+    top: 180px; 
+    left: 690px;
+    margin: 0px ;
+    cursor: pointer;
+    color: rgba(117, 42, 203, 0);
+    border: none;
+    display: block;    
+    background-size: cover;
+    background-color: transparent;
+}
+
+#quitButton {
+    font-family: 'Silkscreen', sans-serif;
+    font-size: 30px;
+    position: relative;
+    top: 185px; 
+    left: 694px;
+    margin: 0px;
+    cursor: pointer;
+    color: rgba(117, 42, 203, 0);
+    border: none;
+    display: block;    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    
+}
+
+
+#terrainSelection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+.terrain {
+    margin: 50px;
+    cursor: pointer;
+    background-size: contain;
+    transition: transform 0.3s ease-in-out; /* Add a smooth transition effect */
+    display: inline-block;
+}
+
+.terrain:hover {
+    transform: scale(1.1); /* Increase the scale factor to enlarge the terrain on hover */
+}
+
+.terrain.enlarged {
+    transform: scale(1.2); /* You can adjust the scale factor as needed */
+}
+
+
+
+.button-container1 { /*naka container sha arun usa ra*/
+    text-align: center;
+    margin-top: 0px;
+}
+
+.button-container1 button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 0 100px;
+}
+
+.button-container1 button img {
+    width: 150px; /* width sa buttons */
+}
+
+.button-container1 img:hover {
+    filter: brightness(120%); /* Increase brightness on hover */
+    transform: scale(1.1); /*enlarge button*/
+}
+
+
+.carSelectionScreen {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    align-items: flex-start;
+}
+
+
+
+
+.car {
+    margin: 40px; /* Adjust the margin as needed */
+    cursor: pointer;
+    background-size: contain;
+    display: inline-block;
+    margin-top: 90px;
+    transition: transform 0.3s ease-in-out; /* Add a smooth transition effect */
+}
+
+.car:hover {
+    transform: scale(1.1); /* Increase the scale factor to enlarge the terrain on hover */
+}
+
+.car.enlarged {
+    transform: scale(1.2); /* You can adjust the scale factor as needed */
+}
+
+
+
+
+.button-container2 {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.button-container2 button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 0 100px;
+}
+
+.button-container2 button img {
+    width: 150px;
+}
+
+.button-container2 img:hover {
+    filter: brightness(120%); /* Increase brightness on hover */
+    transform: scale(1.1); /*enlarge button*/
+}
+
+/*enlargen button hover*/
+#startButton:hover,
+#quitButton:hover {
+    filter: brightness(120%);
+    transform: scale(1.1);
+}
