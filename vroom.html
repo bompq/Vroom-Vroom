@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vroom Vroom Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="body.css">
+</head>
+
+<body>
+    <div class="background"></div>
+
+     <!--BGM -->
+    <audio id="backgroundMusic" loop>
+        <source src="SFX/VroomVroomBGM.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div id="startScreen">
+        <h1>VROOM VROOM</h1>
+        <h2>GAME</h2>
+        <div class="button-container">
+            <button id="startButton" onclick="startGame()">
+                <img src="img/start.png" alt="Start">
+            </button>
+            <button id="quitButton" onclick="window.close()">
+                <img src="img/quit.png" alt="Quit">
+            </button>
+        </div>
+    </div>
+
+    <div id="container">
+
+        <div class="cloud1" id="cloud1">
+            <img src="img/cloud1.png" alt="" width="auto" height="60">
+        </div>
+
+        <div class="cloud2" id="cloud2">
+            <img src="img/cloud2.png" alt="" width="auto" height="80">
+        </div>
+
+        <div class="cloud3" id="cloud3">
+            <img src="img/cloud1.png" alt="" width="auto" height="70">
+        </div>
+
+        <div class="cloud4" id="cloud4">
+            <img src="img/cloud2.png" alt="" width="auto" height="95">
+        </div>
+
+        <div class="carFront" id="carFront">
+            <img src="img/finalOpCar.gif" alt="" width="auto" height="155">
+        </div>
+
+        <div class="bird1" id="bird1">
+            <img src="img/birdie.gif" alt="" width="auto" height="90">
+        </div>
+
+        <div class="bird2" id="bird2">
+            <img src="img/birdie.gif" alt="" width="auto" height="90">
+        </div>
+        
+
+        <div id="terrainSelection" style="display: none;">
+            <h3>CHOOSE A TERRAIN</h3>
+            <div class="terrain" data-terrain="terrain1" onclick="selectTerrain(this)">
+                <img src="img/sunny.png" alt="Terrain 1">
+            </div>
+            <div class="terrain" data-terrain="terrain2" onclick="selectTerrain(this)">
+                <img src="img/rainy.png" alt="Terrain 2">
+            </div>
+            <div class="terrain" data-terrain="terrain3" onclick="selectTerrain(this)">
+                <img src="img/night.png" alt="Terrain 3">
+            </div>
+            <div class="button-container1">
+                <button id="backButtonTerrainSelection" onclick="goBack()">
+                    <img src="img/back.png" alt="Back">
+                </button>
+                <button id="nextButtonTerrainSelection" onclick="proceedToNextStep()">
+                    <img src="img/next.png" alt="Next">
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="carSelectionScreen" style="display: none;">
+        <h4>CHOOSE A CAR</h4>
+        <div class="car" data-car="Red Bull" onclick="selectCar(this)">
+            <img src="img/car1.png" alt="Red Bull">
+        </div>
+        <div class="car" data-car="Mercedes" onclick="selectCar(this)">
+            <img src="img/car2.png" alt="Mercedes">
+        </div>
+        <div class="car" data-car="Ferrari" onclick="selectCar(this)">
+            <img src="img/car3.png" alt="Ferrari">
+        </div>
+        <div class="car" data-car="Aston Martin" onclick="selectCar(this)">
+            <img src="img/car4.png" alt="Aston Martin">
+        </div>
+        <div class="button-container2">
+            <button id="backButtonCarSelection" onclick="goBack()">
+                <img src="img/back.png" alt="Back">
+            </button>
+            <button id="nextButtonCarSelection" onclick="proceedToNextStep()">
+                <img src="img/next.png" alt="Next">
+            </button>
+        </div>
+    </div>
+
+    <script src="startGame.js"></script>
+</body>
+</html>
